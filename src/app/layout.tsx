@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Schedula - Doctor Appointment Enabler',
@@ -15,7 +16,9 @@ export default function RootLayout({
       <body
         className="bg-slate-50"
       >
-        {children}
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
       </body>
     </html>
   );
